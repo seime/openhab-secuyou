@@ -1,4 +1,7 @@
-# Secuyou Smart Lock
+# Secuyou Bluetooth Smart Lock Binding for openHAB
+
+<img src="logo.png" height="100"/>
+<img src="openHAB_workswith.png" height="100"/>
 
 This extension adds support for
 [Secuyou Smart Lock](https://www.secuyou.dk/collections/produkter/products/secuyou-smart-lock-med-venstre-greb) for
@@ -13,18 +16,18 @@ Following thing type is supported by this extension:
 
 The lock must already have been setup in the Secuyou app.
 
-NOTE: Only tested with a single lock of model 2.21 and firmware version 6. Might work somewhat on older models.
+> NOTE: Only tested with a single lock of model 2.21 and firmware version 6. Might work somewhat on older models.
 
-NOTE2: Flaky firmware; sometimes when manually locked by touching the device, the lock reports UNKNOWN/IN PROGRESS
-status (neither LOCKED nor UNLOCKED) for a while. In the app this can be seen as a grayed out lock symbol while still
-reporting that the phone is connected to the lock.
+> NOTE2: Flaky firmware; sometimes when manually locked by touching the device, the lock reports UNKNOWN/IN PROGRESS
+> status (neither LOCKED nor UNLOCKED) for a while. In the app this can be seen as a grayed out lock symbol while still
+> reporting that the phone is connected to the lock.
 
-NOTE3: Make sure you have set "Home Lock" to true - or the lock will assume your BLE dongle is a nearby phone and not
-trigger auto locking.
+> NOTE3: Make sure you have set "Home Lock" to true - or the lock will assume your BLE dongle is a nearby phone and not
+> trigger auto locking.
 
-| Thing Type ID       | Description                            |
-| ------------------- |----------------------------------------|
-| secuyou_smart_lock | Secuyou Smart Lock                     |
+| Thing Type ID      | Description        |
+|--------------------|--------------------|
+| secuyou_smart_lock | Secuyou Smart Lock |
 
 ## Discovery
 
@@ -34,13 +37,13 @@ As any other Bluetooth device, devices are discovered automatically by the corre
 
 Supported configuration parameters for the things:
 
-| Property         | Type    | Default | Required | Description                                                                                                                                                 |
-|------------------|---------|---------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| address          | String  |         | Yes      | Bluetooth address of the device (in format "XX:XX:XX:XX:XX:XX")                                                                                             |
-| pinCode          | Integer |         | No       | Pin code as used in app. Necessary to control lock, but not read status                                                                                     |
-| encryptionKey    | String  |         | No       | Hex encoded encryption key. Necessary to control lock but not read status                                                                                   |
-| keepAliveSeconds | Integer | 600     | No       | How often a refresh shall occur in seconds. Note that lock changes are pushed, no polling should be necessary. Defaults to -1 (no polling)                  |
-| attemptLockRescue | Boolean | false   | No       | When lock reports LOCKING_OPERATION_IN_PROGRESS, try to toggle the lock twice to get accurate state reading without actually changing the lock position     |
+| Property                       | Type    | Default | Required | Description                                                                                                                                                 |
+|--------------------------------|---------|---------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| address                        | String  |         | Yes      | Bluetooth address of the device (in format "XX:XX:XX:XX:XX:XX")                                                                                             |
+| pinCode                        | Integer |         | No       | Pin code as used in app. Necessary to control lock, but not read status                                                                                     |
+| encryptionKey                  | String  |         | No       | Hex encoded encryption key. Necessary to control lock but not read status                                                                                   |
+| keepAliveSeconds               | Integer | 600     | No       | How often a refresh shall occur in seconds. Note that lock changes are pushed, no polling should be necessary. Defaults to -1 (no polling)                  |
+| attemptLockRescue              | Boolean | false   | No       | When lock reports LOCKING_OPERATION_IN_PROGRESS, try to toggle the lock twice to get accurate state reading without actually changing the lock position     |
 | treatLockingInProgressAsLocked | Boolean | false   | No       | When lock reports LOCKING_OPERATION_IN_PROGRESS, treat this as LOCKED if previous known position was UNLOCKED. Warning: Your door may actually be unlocked! |
 
 ## Channels
