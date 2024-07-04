@@ -1,7 +1,8 @@
 # Secuyou Bluetooth Smart Lock Binding for openHAB
 
-<img src="logo.png" height="100"/>
-<img src="openHAB_workswith.png" height="100"/>
+<img src="logo.png" height="150"/>
+
+[<img src="https://github.com/seime/support-me/blob/main/openHAB_workswith.png" width=300>](https://www.openhab.org)
 
 [<img src="https://github.com/seime/support-me/blob/main/beer_me.png" width=150>](https://buymeacoffee.com/arnes)
 
