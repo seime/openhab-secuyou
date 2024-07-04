@@ -3,6 +3,8 @@
 <img src="logo.png" height="100"/>
 <img src="openHAB_workswith.png" height="100"/>
 
+[<img src="https://github.com/seime/support-me/blob/main/beer_me.png" width=150>](https://buymeacoffee.com/arnes)
+
 This extension adds support for
 [Secuyou Smart Lock](https://www.secuyou.dk/collections/produkter/products/secuyou-smart-lock-med-venstre-greb) for
 terrace doors.
